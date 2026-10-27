@@ -1,0 +1,13 @@
+{
+  "name": "Original bilingual engineering teaching corpus",
+  "source": "scripts/build_data.py; authored/generated for this course; no external download",
+  "license": "MIT",
+  "seed": 19,
+  "sha256": "a364e9a98c301cbcecfffcaaabdf4e96fc5090df7a6295a1f6a6c914a0ef0bae",
+  "documents": {
+    "train": 114,
+    "validation": 18,
+    "test": 18
+  },
+  "limitations": "Template overlap across splits; held-out combinations, not independent natural language evaluation."
+}

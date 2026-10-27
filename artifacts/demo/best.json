@@ -1,0 +1,21 @@
+{
+  "config": {
+    "vocab": 48,
+    "context": 64,
+    "width": 64,
+    "heads": 4,
+    "layers": 2,
+    "dropout": 0.1
+  },
+  "metadata": {
+    "step": 400,
+    "seed": 7,
+    "validation_loss": 0.32576125115156174,
+    "train_loss": 0.4245396976669629,
+    "data_sha256": "a364e9a98c301cbcecfffcaaabdf4e96fc5090df7a6295a1f6a6c914a0ef0bae",
+    "torch": "2.7.1+cpu",
+    "lr": 0.002,
+    "kind": "educational_character_base_model"
+  },
+  "sha256": "1613fb8120818b810cc1398a37ef1559eb009647a3dc61efb325edaff52be97c"
+}

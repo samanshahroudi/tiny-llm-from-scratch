@@ -1,0 +1,752 @@
+[
+  {
+    "id": "lesson-0",
+    "split": "train",
+    "text": "The model reads a token and predicts the next token. A token is a unit of text. The scores are called logits. Softmax turns scores into probabilities. A likely token is not a verified fact. We check the source before using an answer.\n"
+  },
+  {
+    "id": "lesson-1",
+    "split": "train",
+    "text": "Attention mixes value vectors from earlier positions. A query is compared with keys. The causal mask hides future positions. The head returns a weighted sum of values. Several heads learn several ways to combine information.\n"
+  },
+  {
+    "id": "lesson-2",
+    "split": "train",
+    "text": "Training changes the weights. Inference uses the weights without updating them. A prompt gives temporary context. A database stores application memory. A cache saves intermediate keys and values while generating a continuation.\n"
+  },
+  {
+    "id": "lesson-3",
+    "split": "train",
+    "text": "We split documents before building the vocabulary. The training set teaches patterns. The validation set helps us choose settings. The test set is reserved for final evaluation. Repeated sentences can make validation misleading.\n"
+  },
+  {
+    "id": "lesson-4",
+    "split": "train",
+    "text": "The input and target differ by one position. The model sees hello and learns its continuation. Cross entropy rewards probability assigned to the observed next token. The optimizer uses gradients to change trainable parameters.\n"
+  },
+  {
+    "id": "lesson-5",
+    "split": "train",
+    "text": "We save the weights, the vocabulary, and the configuration together. The service loads the model once at startup. The client sends a prompt. The server returns a continuation and measured latency.\n"
+  },
+  {
+    "id": "scenario-000",
+    "split": "train",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 1."
+  },
+  {
+    "id": "scenario-001",
+    "split": "train",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 2."
+  },
+  {
+    "id": "scenario-002",
+    "split": "train",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 3."
+  },
+  {
+    "id": "scenario-003",
+    "split": "train",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 4."
+  },
+  {
+    "id": "scenario-004",
+    "split": "train",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 5."
+  },
+  {
+    "id": "scenario-005",
+    "split": "train",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 6."
+  },
+  {
+    "id": "scenario-006",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 7."
+  },
+  {
+    "id": "scenario-007",
+    "split": "train",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 8."
+  },
+  {
+    "id": "scenario-008",
+    "split": "train",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 9."
+  },
+  {
+    "id": "scenario-009",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 10."
+  },
+  {
+    "id": "scenario-010",
+    "split": "train",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 11."
+  },
+  {
+    "id": "scenario-011",
+    "split": "train",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 12."
+  },
+  {
+    "id": "scenario-012",
+    "split": "train",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 13."
+  },
+  {
+    "id": "scenario-013",
+    "split": "train",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 14."
+  },
+  {
+    "id": "scenario-014",
+    "split": "train",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 15."
+  },
+  {
+    "id": "scenario-015",
+    "split": "train",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 16."
+  },
+  {
+    "id": "scenario-016",
+    "split": "train",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 17."
+  },
+  {
+    "id": "scenario-017",
+    "split": "train",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 18."
+  },
+  {
+    "id": "scenario-018",
+    "split": "train",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 19."
+  },
+  {
+    "id": "scenario-019",
+    "split": "train",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 20."
+  },
+  {
+    "id": "scenario-020",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 21."
+  },
+  {
+    "id": "scenario-021",
+    "split": "train",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 22."
+  },
+  {
+    "id": "scenario-022",
+    "split": "train",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 23."
+  },
+  {
+    "id": "scenario-023",
+    "split": "train",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 24."
+  },
+  {
+    "id": "scenario-024",
+    "split": "train",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 25."
+  },
+  {
+    "id": "scenario-025",
+    "split": "train",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 26."
+  },
+  {
+    "id": "scenario-026",
+    "split": "train",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 27."
+  },
+  {
+    "id": "scenario-027",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 28."
+  },
+  {
+    "id": "scenario-028",
+    "split": "train",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 29."
+  },
+  {
+    "id": "scenario-029",
+    "split": "train",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 30."
+  },
+  {
+    "id": "scenario-030",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 31."
+  },
+  {
+    "id": "scenario-031",
+    "split": "train",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 32."
+  },
+  {
+    "id": "scenario-032",
+    "split": "train",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 33."
+  },
+  {
+    "id": "scenario-033",
+    "split": "train",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 34."
+  },
+  {
+    "id": "scenario-034",
+    "split": "train",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 35."
+  },
+  {
+    "id": "scenario-035",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 36."
+  },
+  {
+    "id": "scenario-036",
+    "split": "train",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 37."
+  },
+  {
+    "id": "scenario-037",
+    "split": "train",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 38."
+  },
+  {
+    "id": "scenario-038",
+    "split": "train",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 39."
+  },
+  {
+    "id": "scenario-039",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 40."
+  },
+  {
+    "id": "scenario-040",
+    "split": "train",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 41."
+  },
+  {
+    "id": "scenario-041",
+    "split": "train",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 42."
+  },
+  {
+    "id": "scenario-042",
+    "split": "train",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 43."
+  },
+  {
+    "id": "scenario-043",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 44."
+  },
+  {
+    "id": "scenario-044",
+    "split": "train",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 45."
+  },
+  {
+    "id": "scenario-045",
+    "split": "train",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 46."
+  },
+  {
+    "id": "scenario-046",
+    "split": "train",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 47."
+  },
+  {
+    "id": "scenario-047",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 48."
+  },
+  {
+    "id": "scenario-048",
+    "split": "train",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 49."
+  },
+  {
+    "id": "scenario-049",
+    "split": "train",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 50."
+  },
+  {
+    "id": "scenario-050",
+    "split": "train",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 51."
+  },
+  {
+    "id": "scenario-051",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 52."
+  },
+  {
+    "id": "scenario-052",
+    "split": "train",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 53."
+  },
+  {
+    "id": "scenario-053",
+    "split": "train",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 54."
+  },
+  {
+    "id": "scenario-054",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 55."
+  },
+  {
+    "id": "scenario-055",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 56."
+  },
+  {
+    "id": "scenario-056",
+    "split": "train",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 57."
+  },
+  {
+    "id": "scenario-057",
+    "split": "train",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 58."
+  },
+  {
+    "id": "scenario-058",
+    "split": "train",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 59."
+  },
+  {
+    "id": "scenario-059",
+    "split": "train",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 60."
+  },
+  {
+    "id": "scenario-060",
+    "split": "train",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 61."
+  },
+  {
+    "id": "scenario-061",
+    "split": "train",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 62."
+  },
+  {
+    "id": "scenario-062",
+    "split": "train",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 63."
+  },
+  {
+    "id": "scenario-063",
+    "split": "train",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 64."
+  },
+  {
+    "id": "scenario-064",
+    "split": "train",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 65."
+  },
+  {
+    "id": "scenario-065",
+    "split": "train",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 66."
+  },
+  {
+    "id": "scenario-066",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 67."
+  },
+  {
+    "id": "scenario-067",
+    "split": "train",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 68."
+  },
+  {
+    "id": "scenario-068",
+    "split": "train",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 69."
+  },
+  {
+    "id": "scenario-069",
+    "split": "train",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 70."
+  },
+  {
+    "id": "scenario-070",
+    "split": "train",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 71."
+  },
+  {
+    "id": "scenario-071",
+    "split": "train",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 72."
+  },
+  {
+    "id": "scenario-072",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 73."
+  },
+  {
+    "id": "scenario-073",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 74."
+  },
+  {
+    "id": "scenario-074",
+    "split": "train",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 75."
+  },
+  {
+    "id": "scenario-075",
+    "split": "train",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 76."
+  },
+  {
+    "id": "scenario-076",
+    "split": "train",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 77."
+  },
+  {
+    "id": "scenario-077",
+    "split": "train",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 78."
+  },
+  {
+    "id": "scenario-078",
+    "split": "train",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 79."
+  },
+  {
+    "id": "scenario-079",
+    "split": "train",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 80."
+  },
+  {
+    "id": "scenario-080",
+    "split": "train",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 81."
+  },
+  {
+    "id": "scenario-081",
+    "split": "train",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 82."
+  },
+  {
+    "id": "scenario-082",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 83."
+  },
+  {
+    "id": "scenario-083",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 84."
+  },
+  {
+    "id": "scenario-084",
+    "split": "train",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 85."
+  },
+  {
+    "id": "scenario-085",
+    "split": "train",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 86."
+  },
+  {
+    "id": "scenario-086",
+    "split": "train",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 87."
+  },
+  {
+    "id": "scenario-087",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 88."
+  },
+  {
+    "id": "scenario-088",
+    "split": "train",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 89."
+  },
+  {
+    "id": "scenario-089",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 90."
+  },
+  {
+    "id": "scenario-090",
+    "split": "train",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 91."
+  },
+  {
+    "id": "scenario-091",
+    "split": "train",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 92."
+  },
+  {
+    "id": "scenario-092",
+    "split": "train",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 93."
+  },
+  {
+    "id": "scenario-093",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 94."
+  },
+  {
+    "id": "scenario-094",
+    "split": "train",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 95."
+  },
+  {
+    "id": "scenario-095",
+    "split": "train",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 96."
+  },
+  {
+    "id": "scenario-096",
+    "split": "train",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 97."
+  },
+  {
+    "id": "scenario-097",
+    "split": "train",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 98."
+  },
+  {
+    "id": "scenario-098",
+    "split": "train",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 99."
+  },
+  {
+    "id": "scenario-099",
+    "split": "train",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 100."
+  },
+  {
+    "id": "scenario-100",
+    "split": "train",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 101."
+  },
+  {
+    "id": "scenario-101",
+    "split": "train",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 102."
+  },
+  {
+    "id": "scenario-102",
+    "split": "train",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 103."
+  },
+  {
+    "id": "scenario-103",
+    "split": "train",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 104."
+  },
+  {
+    "id": "scenario-104",
+    "split": "train",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 105."
+  },
+  {
+    "id": "scenario-105",
+    "split": "train",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 106."
+  },
+  {
+    "id": "scenario-106",
+    "split": "train",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 107."
+  },
+  {
+    "id": "scenario-107",
+    "split": "train",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 108."
+  },
+  {
+    "id": "scenario-108",
+    "split": "validation",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 109."
+  },
+  {
+    "id": "scenario-109",
+    "split": "validation",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 110."
+  },
+  {
+    "id": "scenario-110",
+    "split": "validation",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 111."
+  },
+  {
+    "id": "scenario-111",
+    "split": "validation",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 112."
+  },
+  {
+    "id": "scenario-112",
+    "split": "validation",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 113."
+  },
+  {
+    "id": "scenario-113",
+    "split": "validation",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 114."
+  },
+  {
+    "id": "scenario-114",
+    "split": "validation",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 115."
+  },
+  {
+    "id": "scenario-115",
+    "split": "validation",
+    "text": "The engineer works on the billing service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The billing team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 116."
+  },
+  {
+    "id": "scenario-116",
+    "split": "validation",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 117."
+  },
+  {
+    "id": "scenario-117",
+    "split": "validation",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 118."
+  },
+  {
+    "id": "scenario-118",
+    "split": "validation",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 119."
+  },
+  {
+    "id": "scenario-119",
+    "split": "validation",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 120."
+  },
+  {
+    "id": "scenario-120",
+    "split": "validation",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the request size. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 121."
+  },
+  {
+    "id": "scenario-121",
+    "split": "validation",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 122."
+  },
+  {
+    "id": "scenario-122",
+    "split": "validation",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 123."
+  },
+  {
+    "id": "scenario-123",
+    "split": "validation",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 124."
+  },
+  {
+    "id": "scenario-124",
+    "split": "validation",
+    "text": "The engineer works on the booking service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The booking team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 125."
+  },
+  {
+    "id": "scenario-125",
+    "split": "validation",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the validation loss. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 126."
+  },
+  {
+    "id": "scenario-126",
+    "split": "test",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 127."
+  },
+  {
+    "id": "scenario-127",
+    "split": "test",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the token budget. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 128."
+  },
+  {
+    "id": "scenario-128",
+    "split": "test",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the training log. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 129."
+  },
+  {
+    "id": "scenario-129",
+    "split": "test",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 130."
+  },
+  {
+    "id": "scenario-130",
+    "split": "test",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the error rate. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 131."
+  },
+  {
+    "id": "scenario-131",
+    "split": "test",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 132."
+  },
+  {
+    "id": "scenario-132",
+    "split": "test",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 133."
+  },
+  {
+    "id": "scenario-133",
+    "split": "test",
+    "text": "The engineer works on the analytics service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The analytics team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 134."
+  },
+  {
+    "id": "scenario-134",
+    "split": "test",
+    "text": "The engineer works on the support service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The support team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 135."
+  },
+  {
+    "id": "scenario-135",
+    "split": "test",
+    "text": "The engineer works on the inventory service. Before deployment, the engineer checks the response time. The model reads the supplied context and generates a continuation. The inventory team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 136."
+  },
+  {
+    "id": "scenario-136",
+    "split": "test",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 137."
+  },
+  {
+    "id": "scenario-137",
+    "split": "test",
+    "text": "The engineer works on the checkout service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The checkout team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 138."
+  },
+  {
+    "id": "scenario-138",
+    "split": "test",
+    "text": "The engineer works on the profile service. Before deployment, the engineer checks the model version. The model reads the supplied context and generates a continuation. The profile team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 139."
+  },
+  {
+    "id": "scenario-139",
+    "split": "test",
+    "text": "The engineer works on the catalog service. Before deployment, the engineer checks the data source. The model reads the supplied context and generates a continuation. The catalog team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 140."
+  },
+  {
+    "id": "scenario-140",
+    "split": "test",
+    "text": "The engineer works on the reports service. Before deployment, the engineer checks the cache size. The model reads the supplied context and generates a continuation. The reports team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 141."
+  },
+  {
+    "id": "scenario-141",
+    "split": "test",
+    "text": "The engineer works on the shipping service. Before deployment, the engineer checks the memory usage. The model reads the supplied context and generates a continuation. The shipping team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 142."
+  },
+  {
+    "id": "scenario-142",
+    "split": "test",
+    "text": "The engineer works on the gateway service. Before deployment, the engineer checks the input schema. The model reads the supplied context and generates a continuation. The gateway team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 143."
+  },
+  {
+    "id": "scenario-143",
+    "split": "test",
+    "text": "The engineer works on the search service. Before deployment, the engineer checks the output length. The model reads the supplied context and generates a continuation. The search team records the result and compares it with a baseline. If the result is wrong, the team inspects the input and the data. A small test helps the engineer find a problem before release. Report 144."
+  }
+]

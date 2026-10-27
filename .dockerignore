@@ -1,0 +1,12 @@
+.venv
+.git
+__pycache__
+.pytest_cache
+notebooks
+tests
+scripts
+data/external
+artifacts/runs
+artifacts/notebook_execution
+.env
+dist

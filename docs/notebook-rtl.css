@@ -1,0 +1,70 @@
+/* Only notebooks that ran the presentation cell receive these rules. */
+:is(.jp-Notebook, #notebook-container):has(.tinyllm-rtl-marker)
+  :is(.jp-RenderedMarkdown, .text_cell_render) {
+  direction: rtl;
+  text-align: right;
+  font-family: Tahoma, "Segoe UI", sans-serif;
+  line-height: 1.9;
+}
+
+/* Jupyter explicitly aligns paragraphs left, overriding container inheritance. */
+:is(.jp-Notebook, #notebook-container):has(.tinyllm-rtl-marker)
+  :is(.jp-RenderedMarkdown, .text_cell_render)
+  :is(p, ul, ol, li, blockquote, details, summary) {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Keep English identifiers, paths, arrows and shortcuts as one LTR unit. */
+:is(.jp-Notebook, #notebook-container):has(.tinyllm-rtl-marker)
+  :is(.jp-RenderedMarkdown, .text_cell_render) code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+  text-align: left;
+  max-width: 100%;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Fenced source code remains LTR; live code editors are never selected. */
+:is(.jp-Notebook, #notebook-container):has(.tinyllm-rtl-marker)
+  :is(.jp-RenderedMarkdown, .text_cell_render) pre,
+:is(.jp-Notebook, #notebook-container):has(.tinyllm-rtl-marker)
+  :is(.jp-RenderedMarkdown, .text_cell_render) pre code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+  white-space: pre;
+  overflow-wrap: normal;
+}
+
+:is(.jp-Notebook, #notebook-container):has(.tinyllm-rtl-marker)
+  :is(.jp-RenderedMarkdown, .text_cell_render) pre code {
+  display: block;
+}
+
+:is(.jp-Notebook, #notebook-container):has(.tinyllm-rtl-marker)
+  :is(.jp-RenderedMarkdown, .text_cell_render) :is(ul, ol) {
+  padding-left: 0;
+  padding-right: 2rem;
+}
+
+:is(.jp-Notebook, #notebook-container):has(.tinyllm-rtl-marker)
+  :is(.jp-RenderedMarkdown, .text_cell_render) :is(th, td) {
+  text-align: right;
+}
+
+/* MathJax v2/v3 used by Jupyter and exported HTML. */
+:is(.jp-Notebook, #notebook-container):has(.tinyllm-rtl-marker)
+  :is(.jp-RenderedMarkdown, .text_cell_render)
+  :is(.MathJax, .MathJax_Display, .MathJax_SVG, .MathJax_CHTML, mjx-container) {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+:is(.jp-Notebook, #notebook-container):has(.tinyllm-rtl-marker)
+  :is(.jp-RenderedMarkdown, .text_cell_render)
+  :is(.MathJax_Display, mjx-container[display="true"]) {
+  text-align: center;
+}

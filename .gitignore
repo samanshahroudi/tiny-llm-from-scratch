@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.env
+.env.*
+!.env.example
+data/external/
+artifacts/runs/
+artifacts/notebook_execution/
+dist/
+build/
+.DS_Store

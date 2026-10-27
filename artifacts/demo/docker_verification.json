@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "container": "tiny-llm-fa-demo",
+  "image": "tiny-llm-fa:local",
+  "url": "http://127.0.0.1:7860",
+  "health": {
+    "status": "ok",
+    "model_type": "character_base_model",
+    "context": 64,
+    "trained_step": 400
+  },
+  "pages": {
+    "/": 200,
+    "/docs": 200,
+    "/health": 200
+  },
+  "sample": {
+    "text": "The model res the enginer wrks on the se atanuatio",
+    "continuation": "res the enginer wrks on the se atanuatio",
+    "prompt_tokens": 10,
+    "generated_tokens": 40,
+    "elapsed_ms": 57.6
+  },
+  "persian_sample": {
+    "text": "مدل از انتشار، ورودی و ن",
+    "continuation": "از انتشار، ورودی و ن",
+    "prompt_tokens": 4,
+    "generated_tokens": 20,
+    "elapsed_ms": 26.23
+  },
+  "invalid_requests": [
+    422,
+    422,
+    422,
+    422
+  ],
+  "seed_repeatability": true
+}

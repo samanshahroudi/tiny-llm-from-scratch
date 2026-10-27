@@ -1,0 +1,16 @@
+{
+  "steps_per_run": 400,
+  "candidates": {
+    "baseline": 0.3431342939535777,
+    "higher_lr": 0.1796248952547709
+  },
+  "winner": "higher_lr",
+  "gpt_validation_loss": 0.1796248952547709,
+  "bigram_validation_loss": 1.9513992567857106,
+  "parameters": 114515,
+  "vocab_size": 83,
+  "seed": 7,
+  "smoke": false,
+  "test_loss": 0.18352593295276165,
+  "test_perplexity": 1.2014461220532275
+}

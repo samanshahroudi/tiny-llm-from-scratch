@@ -1,0 +1,19 @@
+{
+  "seed": 7,
+  "steps": 400,
+  "lr": 0.002,
+  "device": "cpu",
+  "threads": 2,
+  "parameters": 110000,
+  "vocab_size": 48,
+  "split_tokens": {
+    "train": 42173,
+    "validation": 6812,
+    "test": 6820
+  },
+  "best_step": 400,
+  "best_validation_loss": 0.32576125115156174,
+  "elapsed_seconds": 86.28353870000137,
+  "data_sha256": "a364e9a98c301cbcecfffcaaabdf4e96fc5090df7a6295a1f6a6c914a0ef0bae",
+  "python_note": "See environment-lock.txt for tested versions"
+}

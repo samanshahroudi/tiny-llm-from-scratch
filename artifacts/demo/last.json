@@ -1,0 +1,17 @@
+{
+  "config": {
+    "vocab": 48,
+    "context": 64,
+    "width": 64,
+    "heads": 4,
+    "layers": 2,
+    "dropout": 0.1
+  },
+  "metadata": {
+    "step": 400,
+    "seed": 7,
+    "data_sha256": "a364e9a98c301cbcecfffcaaabdf4e96fc5090df7a6295a1f6a6c914a0ef0bae",
+    "kind": "educational_character_base_model"
+  },
+  "sha256": "689ffc75ade68577eea3b14161b721ff13d15ebcb4b8d38e1fd64232bcbb341b"
+}
