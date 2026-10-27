@@ -593,11 +593,7 @@ print("Optimizer in last checkpoint:", "optimizer" in last_payload)
 
 ## 11. Is GPT Better Than the Simple Bigram?
 
-This section explains the corresponding training, evaluation, checkpoint, and model-selection detail.
-
-This section explains the corresponding training, evaluation, checkpoint, and model-selection detail.
-
-This section explains the corresponding training, evaluation, checkpoint, and model-selection detail.
+The test split is held back until the model and training configuration have been selected. This prevents repeated experimentation on the test data from turning it into another validation set. The final report records the selected checkpoint, data hash, validation losses, and—outside smoke mode—the one-time test loss and perplexity.
 
 <!-- cell -->
 ```python
@@ -670,35 +666,35 @@ print("Final report:", report_path)
 
 ## 13. Exercises and Interview Questions
 
-**Interview exercise:** Explain this point using the results from your own run.
+1. Why is the test split evaluated only after the checkpoint has been selected? Use the validation and test fields in `report.json` to support your answer.
 
-**Interview exercise:** Explain this point using the results from your own run.
+2. Compare the GPT validation loss with the bigram validation loss. What does the comparison tell you, and what does it not prove about general language quality?
 
-**Interview exercise:** Explain this point using the results from your own run.
+3. Why do we compare the models on the same context window and batch-sampling procedure? What kind of unfair comparison would otherwise be possible?
 
-**Interview exercise:** Explain this point using the results from your own run.
+4. What is the purpose of saving `best.pt`, `last.pt`, and their SHA-256 hashes? Describe a practical failure that checkpoint metadata can help detect.
 
-**Interview exercise:** Explain this point using the results from your own run.
+5. Why should the validation loss usually decrease during training, while the training loss can continue decreasing even after validation loss stops improving?
 
 <!-- fa-lint-ignore-next-line -->
 <details><summary>Open the answers after solving the exercises</summary>
 
-**Interview exercise:** Explain this point using the results from your own run.
+1. The validation loss estimates performance on held-out data used for model selection. The test split is evaluated once at the end so it remains an unbiased final estimate. In smoke mode, the report deliberately records that no final quality claim was made.
 
-**Interview exercise:** Explain this point using the results from your own run.
+2. A lower GPT validation loss than the bigram loss is evidence that the trained model captures patterns the simple last-token baseline misses. It is not evidence that the model is broadly fluent or useful outside this small synthetic corpus.
 
-**Interview exercise:** Explain this point using the results from your own run.
+3. Matching the context length and sampling procedure controls the evaluation conditions. Without that control, one model could receive more context or easier examples and appear better for reasons unrelated to its architecture.
 
-**Interview exercise:** Explain this point using the results from your own run.
+4. `best.pt` preserves the checkpoint selected by validation loss, while `last.pt` preserves the final training state. Hashes and data metadata make it possible to detect a corrupted, replaced, or mismatched checkpoint before serving it.
 
-**Interview exercise:** Explain this point using the results from your own run.
+5. Training loss measures the examples the optimizer sees repeatedly, so it can keep improving through memorization. Validation loss measures held-out examples and may flatten or rise when the model begins to overfit.
 
 </details>
 
-**Interview exercise:** Explain this point using the results from your own run.
+6. Why is a small synthetic corpus a useful teaching dataset but a weak basis for a production quality claim?
 
-**Interview exercise:** Explain this point using the results from your own run.
+7. What information would you add to the experiment report before comparing runs across machines or code versions?
 
-**Interview exercise:** Explain this point using the results from your own run.
+8. If the selected model has a lower validation loss but produces repetitive samples, what additional diagnostics would you run before changing the architecture?
 
-**Interview exercise:** Explain this point using the results from your own run.
+9. Explain why reproducibility requires more than storing the random seed.

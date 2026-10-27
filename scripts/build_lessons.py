@@ -27,7 +27,10 @@ def clean_placeholder_comments(text):
     """Remove unfinished scaffolding comments from generated English lessons."""
     lines = []
     for line in text.splitlines():
-        if line.strip() == "# Explain this step.":
+        if line.strip() in {
+            "# Explain this step.",
+            "This section explains the corresponding training, evaluation, checkpoint, and model-selection detail.",
+        }:
             continue
         line = line.replace("  # Explain this step.", "")
         lines.append(line)
