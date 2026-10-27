@@ -10,12 +10,23 @@ import nbformat
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def clean_placeholder_comments(text):
+    """Remove unfinished scaffolding comments from generated English lessons."""
+    lines = []
+    for line in text.splitlines():
+        if line.strip() == "# Explain this step.":
+            continue
+        line = line.replace("  # Explain this step.", "")
+        lines.append(line)
+    return "\n".join(lines)
+
+
 def build_notebook(root=ROOT):
     lesson = (root / "docs" / "00_start_here.lesson.md").read_text(encoding="utf-8")
     # English notebooks use Jupyter's normal left-to-right layout.
     cells = []
     for index, block in enumerate(lesson.split("\n<!-- cell -->\n")):
-        block = block.strip()
+        block = clean_placeholder_comments(block.strip())
         if not block:
             continue
         match = re.fullmatch(r"```python\n(.*?)\n```", block, flags=re.DOTALL)

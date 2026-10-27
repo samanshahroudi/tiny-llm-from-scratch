@@ -23,6 +23,17 @@ LESSONS = (
 )
 
 
+def clean_placeholder_comments(text):
+    """Remove unfinished scaffolding comments from generated English lessons."""
+    lines = []
+    for line in text.splitlines():
+        if line.strip() == "# Explain this step.":
+            continue
+        line = line.replace("  # Explain this step.", "")
+        lines.append(line)
+    return "\n".join(lines)
+
+
 def build_lesson(name, root=ROOT):
     if name not in LESSONS:
         raise ValueError(f"Unknown lesson: {name}")
@@ -30,7 +41,7 @@ def build_lesson(name, root=ROOT):
     # English notebooks use Jupyter's normal left-to-right layout.
     cells = []
     for index, block in enumerate(source.split("\n<!-- cell -->\n")):
-        block = block.strip()
+        block = clean_placeholder_comments(block.strip())
         if not block:
             continue
         match = re.fullmatch(r"```python\n(.*?)\n```", block, flags=re.DOTALL)
